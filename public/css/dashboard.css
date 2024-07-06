@@ -1,0 +1,31 @@
+
+.nav-item{
+    min-height: 100vh;
+}
+.nav-link{
+    padding: 13px 40px;
+}
+.icon{
+    margin-right: 15px;
+}
+.aq{
+    list-style: none;
+}
+
+.bar{
+    height: 300vh;
+}.nav-item {
+    min-height: 100vh;
+}
+
+.nav-link {
+    padding: 13px 40px;
+}
+
+.icons {
+    margin-right: 15px;
+}
+
+.aq {
+    margin-top: 320px;
+}

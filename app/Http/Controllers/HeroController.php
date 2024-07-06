@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Dashboard;
-use App\Http\Requests\StoreloadingRequest;
-use App\Http\Requests\UpdateloadingRequest;
-use App\Models\Tab;
+use App\Models\hero;
+use App\Http\Requests\StoreheroRequest;
+use App\Http\Requests\UpdateheroRequest;
 
-class LoadingController extends Controller
+class HeroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,8 @@ class LoadingController extends Controller
     public function index()
     {
         //
-        $setting=Dashboard::latest()->first();
-        $data=Tab::all();
-        return view('loading.index',compact('setting','data'));
+        $section= hero::latest()->first();
+        return view('dashboard.index',compact('section'));
     }
 
     /**
@@ -31,16 +29,20 @@ class LoadingController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreloadingRequest $request)
+    public function store(StoreheroRequest $request)
     {
         //
-    
+        $section= new hero();
+        $section->user = $request->input('user');
+        $section->para = $request->input('para');
+        $section->save();
+        return redirect()->back()->with('success', 'Section saved successfully!');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(loading $loading)
+    public function show(hero $hero)
     {
         //
     }
@@ -48,7 +50,7 @@ class LoadingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(loading $loading)
+    public function edit(hero $hero)
     {
         //
     }
@@ -56,7 +58,7 @@ class LoadingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateloadingRequest $request, loading $loading)
+    public function update(UpdateheroRequest $request, hero $hero)
     {
         //
     }
@@ -64,7 +66,7 @@ class LoadingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(loading $loading)
+    public function destroy(hero $hero)
     {
         //
     }

@@ -37,7 +37,39 @@
                 </div>
             </div>
             <div class="col-9">
-                <h1>Dashboard</h1>
+                <div class="row-12">
+                    <div class="card mt-3 justify-contact-center">
+                        <div class="card-body">
+                             <form action="{{ route('tab.update',$tab->id) }}" method="post">
+                              @csrf
+                                @method('PUT')
+                                <h1 class="text-center fw-bold"> Update Collapse F.A.Q</h1>
+                                @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                        @if (session ('success'))
+                        <div class="alert alert-success">
+                            <b>Success!</b> {{ session ('success')}}
+                        </div>
+                        @endif
+                                <label for="title">Title</label>
+                                <input type="text" name="title" id="title" class="form-control" value="{{$tab->title}}">
+                                <h5>Description</h5>
+                                <textarea id="desc" name="desc"  rows="6" cols="90" class="form-control">{{$tab->desc}}</textarea>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-dark mt-3" >Submit</button>
+                                </div>
+                           
+                             </div>
+                         </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -183,7 +183,7 @@ a:hover {
     height: 0;
     bottom: 0;
     left: 0;
-    background-color: #106eea;
+    background-color:#106eea;
     position: absolute;
     transition: 0.4s;
     z-index: -1;
@@ -243,15 +243,18 @@ a:hover {
     border-radius: 0%;
 }
 
-#tikk {
-    background-color: rgba(127, 197, 241, 0.1);
+.die {
+    background-color: rgb(187, 234, 250, 0.2);
+    border: 0;
+    height: 190px;
 }
 
 .icon-container {
     position: relative;
-    margin-top: -50px;
+    margin-top: -25%;
     align-items: center;
     display: flex;
+    justify-content: center;
     flex-direction: column;
 }
 
@@ -265,11 +268,11 @@ a:hover {
 }
 
 .icon-background {
-    border: 6px solid #fff;
-    background-color: #106eea;
+    border: 6px solid white;
     padding: 30px;
-    border-radius: 45px;
+    background-color: #106eea;
     display: inline-block;
+    border-radius: 45px;
 }
 
 .section {
@@ -291,7 +294,7 @@ a:hover {
 
 }
 
-.card:hover {
+.d:hover {
     border: 1px solid #106eea;
     transition: ease 0.1s;
 }
@@ -359,7 +362,7 @@ a:hover {
     padding: 8px;
 }
 
-.card {
+.a {
     overflow: hidden;
     position: relative;
 }
